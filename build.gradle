@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useTestNG()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+
+dependencies {
+    testCompile group: 'org.testng', name: 'testng', version: '7.3.0'
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '4.3.1'
+    compile group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.5'
+    testCompile "com.github.tomakehurst:wiremock-jre8:2.27.2"
+
+
+
+}
